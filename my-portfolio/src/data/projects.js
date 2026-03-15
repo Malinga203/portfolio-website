@@ -2,81 +2,157 @@ export const projects = [
   {
     slug: "construction-site-safety-iot-project",
     title: "Construction Site Safety IoT Project",
-    short: "Smart vest safety system with real-time alerts for construction environments.",
+    category: "featured",
+    short:
+      "Smart construction safety solution using IoT concepts, RFID-based identification, and real-time alert logic.",
     description:
-      "An IoT-based safety solution using smart vest concepts for hazard detection and worker identification. Focuses on real-time alerts and safety monitoring.",
-    tech: ["IoT", "ESP8266/ESP32", "C/C++", "Sensors"],
-    tags: ["IoT", "Safety", "Embedded"],
-    github: "https://github.com/malinga203/Construction-Site-Safety-IOT-Project",
-    
+      "The Construction Site Safety IoT Project is a smart safety solution designed for construction environments. It focuses on worker identification, hazard awareness, and real-time safety monitoring using IoT concepts and embedded technologies.",
+    tech: ["C++", "ESP8266/ESP32", "RFID", "Sensors", "IoT"],
+    tags: ["IoT", "Embedded", "Safety"],
+    github: "https://github.com/Malinga203/Construction-Site-Safety-IOT-Project",
+    role: "Developer",
+    highlights: [
+      "RFID-based worker identification",
+      "Hazard and safety-focused monitoring logic",
+      "Real-time alert concept for unsafe conditions",
+    ],
   },
   {
     slug: "care-buddy",
     title: "care-buddy",
-    short: "Pet care management system built with Spring Boot Microservices & React.",
+    category: "featured",
+    short:
+      "Pet care management platform built with Spring Boot Microservices and React.js.",
     description:
-      "A pet care management platform with secure login and REST APIs. Supports owner, pet, doctor, and appointment management with microservices architecture.",
-    tech: ["Spring Boot", "Microservices", "React", "REST API"],
-    tags: ["Full Stack", "Microservices", "React"],
-    github: "https://github.com/malinga203/care-buddy",
-    
+      "Care-buddy is a pet care management system built with Spring Boot Microservices and React.js. It includes secure login, owner and doctor management, appointment handling, and RESTful architecture.",
+    tech: ["React", "JavaScript", "Spring Boot", "Microservices", "REST API"],
+    tags: ["Full Stack", "React", "Microservices"],
+    github: "https://github.com/Malinga203/care-buddy",
+    role: "Contributor / Developer",
+    highlights: [
+      "Secure authentication and structured API flow",
+      "Pet, doctor, and appointment management",
+      "Scalable microservices-based architecture",
+    ],
   },
   {
     slug: "sri-lanka-tourism-system",
-    title: "SriLanka Tourism System",
-    short: "Tourism web system to help users explore and plan travel in Sri Lanka.",
+    title: "Sri Lanka Tourism System",
+    category: "featured",
+    short:
+      "Tourism web application built to help users explore travel information, places, and hotels in Sri Lanka.",
     description:
-      "A modern tourism web platform designed to help tourists explore hotels and places and plan trips efficiently. Includes user-friendly UI and backend features.",
-    tech: ["Laravel", "Blade", "PHP", "MySQL"],
-    tags: ["PHP", "Web", "Laravel"],
-    github: "https://github.com/malinga203/SriLanka-Tourism-System",
-    
+      "The Sri Lanka Tourism System is a modern web-based platform designed to support travel planning. It helps users discover destinations, explore hotels, and access useful information through a user-friendly interface.",
+    tech: ["PHP", "Laravel", "Blade", "MySQL", "HTML", "CSS"],
+    tags: ["PHP", "Laravel", "Web"],
+    github: "",
+    role: "Developer",
+    highlights: [
+      "Travel planning oriented web workflow",
+      "Hotel and place exploration support",
+      "Laravel and Blade-based implementation",
+    ],
   },
   {
     slug: "scientific-calculator",
     title: "scientific-calculator",
-    short: "Modern scientific calculator built with React and mathjs.",
+    category: "featured",
+    short:
+      "Modern scientific calculator built using React and mathjs with memory and history support.",
     description:
-      "A responsive calculator app with advanced functions, memory, and history support. Built to practice React UI design and logic handling.",
-    tech: ["React", "JavaScript", "mathjs"],
-    tags: ["React", "Web", "JavaScript"],
-    github: "https://github.com/malinga203/scientific-calculator",
-    
+      "This scientific calculator was developed with React and mathjs to support advanced mathematical operations. It includes a clean UI, history tracking, and memory functionality.",
+    tech: ["React", "JavaScript", "mathjs", "CSS"],
+    tags: ["React", "JavaScript", "Web"],
+    github: "https://github.com/Malinga203/scientific-calculator",
+    role: "Developer",
+    highlights: [
+      "Advanced scientific operations",
+      "History and memory handling",
+      "Responsive modern React UI",
+    ],
   },
   {
     slug: "fertilizer-seed-distribution-system",
-    title: "Fertilizer & Seed Distribution System",
-    short: "Java desktop system to manage fertilizer and seed distribution workflow.",
+    title: "Fertilizer Seed Distribution System",
+    category: "featured",
+    short:
+      "Java desktop application developed to manage fertilizer and seed distribution processes.",
     description:
-      "A Java-based desktop application for managing fertilizer and seed distribution operations with structured modules and reporting.",
-    tech: ["Java", "Desktop App", "OOP"],
+      "A Java-based desktop application designed to manage fertilizer and seed distribution in an organized manner. The project focuses on desktop workflow management using object-oriented concepts.",
+    tech: ["Java", "OOP", "Desktop Application"],
     tags: ["Java", "Desktop", "OOP"],
-    github: "https://github.com/malinga203/Fertilizer-Seed-Distribution-System",
-    
+    github: "https://github.com/Malinga203/Fertilizer-Seed-Distribution-System",
+    role: "Developer",
+    highlights: [
+      "Desktop-based management system",
+      "Object-oriented Java implementation",
+      "Structured workflow for distribution tasks",
+    ],
   },
   {
     slug: "examination-management-system-gui",
     title: "Examination Management System GUI",
-    short: "C# Windows Forms application for managing student examinations and marks.",
+    category: "featured",
+    short:
+      "C# Windows Forms application for handling examinations, schedules, and marks.",
     description:
-      "Team project built using C# Windows Forms for managing exams, schedules, and marks with a user-friendly GUI.",
-    tech: ["C#", "Windows Forms", ".NET"],
+      "This project is a C# Windows Forms application developed as a team project to manage student examinations, marks, and scheduling in a desktop GUI environment.",
+    tech: ["C#", ".NET", "Windows Forms"],
     tags: ["C#", "Desktop", "GUI"],
-    github: "https://github.com/malinga203/Examination-Management-System-GUI-",
-    
+    github: "https://github.com/Malinga203/Examination-Management-System-GUI-",
+    role: "Team Member / Developer",
+    highlights: [
+      "Windows Forms desktop UI",
+      "Schedule and marks management",
+      "Team-based project development",
+    ],
   },
-
+  {
+    slug: "examination-management-system-java",
+    title: "Examination Management System",
+    category: "featured",
+    short:
+      "Java Swing based examination management system developed using OOP concepts.",
+    description:
+      "A Java Swing desktop application created to manage examination-related processes using object-oriented programming concepts and a desktop user interface.",
+    tech: ["Java", "Java Swing", "OOP"],
+    tags: ["Java", "Swing", "OOP"],
+    github: "https://github.com/Malinga203/Eamination-Management-system",
+    role: "Developer",
+    highlights: [
+      "Java Swing desktop interface",
+      "OOP-based system structure",
+      "Academic workflow management",
+    ],
+  },
   {
     slug: "hotel-management-system-contribution",
-    title: "Hotel Management System (Contributor)",
-    short: "Contributed to an HTML/CSS/PHP hotel management system project.",
+    title: "Hotel Management System",
+    category: "contribution",
+    short:
+      "Contributed to an HTML, CSS, and PHP-based hotel management system project.",
     description:
-      "Contributed features and improvements to a hotel management system built with HTML, CSS, and PHP. Worked on UI pages and backend integration tasks.",
+      "This is a contribution-based project where I supported the development of a hotel management system built with HTML, CSS, PHP, and database connectivity. My contribution focused on web pages, structure, and improvement tasks.",
     tech: ["HTML", "CSS", "PHP", "MySQL"],
-    tags: ["PHP", "Web", "Contribution"],
-    github: "https://github.com/Malinga203/Hotel-Management-System.git",
-    
+    tags: ["Contribution", "PHP", "HTML"],
+    github: "",
+    role: "Contributor",
+    highlights: [
+      "Supported HTML and PHP-based development",
+      "Contributed to web system improvements",
+      "Worked on hotel management related features",
+    ],
   },
 ];
 
-export const allTags = Array.from(new Set(projects.flatMap((p) => p.tags))).sort();
+export const featuredProjects = projects.filter(
+  (project) => project.category === "featured"
+);
+
+export const contributionProjects = projects.filter(
+  (project) => project.category === "contribution"
+);
+
+export const allTags = Array.from(
+  new Set(projects.flatMap((project) => project.tags))
+).sort();
