@@ -1,38 +1,124 @@
+import { Container, Row, Col, Button, Badge } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { projects } from "../data/projects";
+import { motion } from "framer-motion";
+import { FaGithub, FaCode, FaLaptopCode, FaMicrochip } from "react-icons/fa";
 import ProjectCard from "../components/ProjectCard";
+import SectionTitle from "../components/SectionTitle";
+import { featuredProjects, contributionProjects } from "../data/projects";
 
 export default function Home() {
-  const featured = projects.slice(0, 3);
-
   return (
-    <div className="space-y-12">
-      <section className="card">
-        <span className="badge mb-4">Undergraduate • BSc (Hons) Computing</span>
+    <div>
+      <section className="hero-section">
+        <Container>
+          <Row className="align-items-center g-5">
+            <Col lg={7}>
+              <motion.div
+                initial={{ opacity: 0, y: 28 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+              >
+                <Badge className="hero-badge mb-3">
+                  Undergraduate Computing Student
+                </Badge>
 
-        <h1 className="text-3xl font-bold">
-          Hi, I’m Malinga — I build web apps, dashboards and student systems.
-        </h1>
+                <h1 className="hero-title">
+                  Building Web, Desktop & IoT Solutions with a Professional Mindset
+                </h1>
 
-        <p className="mt-3 text-slate-600">
-          I’m interested in full-stack development, database systems and IoT-based monitoring solutions.
-        </p>
+                <p className="hero-text">
+                  I’m Malinga Lakmal, a BSc (Hons) Computing student passionate
+                  about creating modern web applications, desktop systems, and
+                  IoT-based projects that solve real-world problems with clean,
+                  practical, and user-friendly solutions.
+                </p>
 
-        <div className="mt-6 flex flex-wrap gap-3">
-          <Link className="btn btn-primary" to="/projects">View Projects</Link>
-          <Link className="btn" to="/contact">Contact Me</Link>
-        </div>
+                <div className="d-flex flex-wrap gap-3 mt-4">
+                  <Button as={Link} to="/projects" variant="light" size="lg">
+                    View Projects
+                  </Button>
+
+                  <Button
+                    as="a"
+                    href="https://github.com/Malinga203"
+                    target="_blank"
+                    rel="noreferrer"
+                    variant="outline-light"
+                    size="lg"
+                  >
+                    <FaGithub className="me-2" />
+                    GitHub
+                  </Button>
+                </div>
+              </motion.div>
+            </Col>
+
+            <Col lg={5}>
+              <motion.div
+                className="hero-stats-card"
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7 }}
+              >
+                <div className="stat-item">
+                  <FaCode />
+                  <div>
+                    <h4>{featuredProjects.length + contributionProjects.length}+</h4>
+                    <p>Projects & Contributions</p>
+                  </div>
+                </div>
+
+                <div className="stat-item">
+                  <FaLaptopCode />
+                  <div>
+                    <h4>Web + Desktop</h4>
+                    <p>React, PHP, Java, C# and full project development</p>
+                  </div>
+                </div>
+
+                <div className="stat-item">
+                  <FaMicrochip />
+                  <div>
+                    <h4>IoT Focus</h4>
+                    <p>Embedded systems and smart safety project experience</p>
+                  </div>
+                </div>
+              </motion.div>
+            </Col>
+          </Row>
+        </Container>
       </section>
 
-      <section>
-        <div className="flex items-end justify-between">
-          <h2 className="text-xl font-bold">Featured Projects</h2>
-          <Link to="/projects" className="text-sm hover:underline">See all →</Link>
-        </div>
+      <section className="py-5">
+        <Container>
+          <SectionTitle
+            title="Featured Projects"
+            subtitle="A selection of my major academic and personal projects."
+          />
+          <Row className="g-4">
+            {featuredProjects.slice(0, 6).map((project) => (
+              <Col md={6} lg={4} key={project.slug}>
+                <ProjectCard project={project} />
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </section>
 
-        <div className="mt-4 grid gap-4 md:grid-cols-3">
-          {featured.map((p) => <ProjectCard key={p.slug} project={p} />)}
-        </div>
+      <section className="py-5">
+        <Container>
+          <SectionTitle
+            title="Contributions"
+            subtitle="Projects where I contributed to implementation, UI, or system improvement tasks."
+          />
+          <Row className="g-4">
+            {contributionProjects.map((project) => (
+              <Col md={6} lg={4} key={project.slug}>
+                <ProjectCard project={project} />
+              </Col>
+            ))}
+          </Row>
+        </Container>
       </section>
     </div>
   );
