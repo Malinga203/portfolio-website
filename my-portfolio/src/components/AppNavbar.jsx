@@ -4,15 +4,16 @@ import { FaGithub } from "react-icons/fa";
 
 export default function AppNavbar() {
   return (
-    <Navbar expand="lg" variant="dark" className="custom-navbar py-3">
+    <Navbar expand="lg" variant="dark" className="custom-navbar" collapseOnSelect>
       <Container>
-        <Navbar.Brand as={NavLink} to="/" className="fw-bold brand-text">
+        <Navbar.Brand as={NavLink} to="/" className="brand-logo">
           Malinga Lakmal
         </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls="main-nav" />
-        <Navbar.Collapse id="main-nav">
-          <Nav className="ms-auto align-items-lg-center gap-lg-3">
+        <Navbar.Toggle aria-controls="main-navbar" className="nav-toggle" />
+
+        <Navbar.Collapse id="main-navbar">
+          <Nav className="ms-auto align-items-lg-center nav-menu">
             <Nav.Link as={NavLink} to="/" end>
               Home
             </Nav.Link>
@@ -25,11 +26,12 @@ export default function AppNavbar() {
             <Nav.Link as={NavLink} to="/contact">
               Contact
             </Nav.Link>
+
             <Nav.Link
               href="https://github.com/Malinga203"
               target="_blank"
               rel="noreferrer"
-              className="fs-5"
+              className="github-nav-link"
             >
               <FaGithub />
             </Nav.Link>
