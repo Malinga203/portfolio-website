@@ -47,24 +47,28 @@ const services = [
 export default function Home() {
   return (
     <div>
-      <section className="hero-section modern-hero-section">
+      <section className="hero-section pro-hero">
         <Container>
           <Row className="align-items-center g-5">
             <Col lg={6}>
               <motion.div
-                initial={{ opacity: 0, x: -40 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
                 <p className="hero-small">Hello, I am</p>
 
-                <h1 className="hero-name">Malinga Lakmal</h1>
+                <h1 className="hero-name">
+                  Malinga <span>Lakmal</span>
+                </h1>
 
-                <h2 className="hero-role">Web Developer & IoT Enthusiast</h2>
+                <h2 className="hero-role">
+                  Building <span>Modern Digital Solutions</span>
+                </h2>
 
                 <p className="hero-description">
-                  A passionate Computing student building modern web, desktop,
-                  and IoT solutions with clean design, strong usability, and
+                  A passionate Computing student focused on creating professional
+                  web, desktop, and IoT solutions with modern UI design and
                   real-world impact.
                 </p>
 
@@ -102,7 +106,7 @@ export default function Home() {
                     download
                   >
                     <FaDownload className="me-2" />
-                    Download CV
+                    CV
                   </Button>
                 </div>
 
@@ -113,7 +117,7 @@ export default function Home() {
                       className="skill-badge"
                       initial={{ opacity: 0, y: 16 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: index * 0.05 }}
+                      transition={{ delay: index * 0.05 }}
                     >
                       {skill}
                     </motion.span>
@@ -124,16 +128,13 @@ export default function Home() {
 
             <Col lg={6}>
               <motion.div
-                className="hero-image-modern"
-                initial={{ opacity: 0, x: 40 }}
-                animate={{ opacity: 1, x: 0 }}
+                className="hero-image-pro"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8 }}
               >
                 <img src={profile} alt="Malinga Lakmal" />
-
-                <div className="circle circle-1"></div>
-                <div className="circle circle-2"></div>
-                <div className="circle circle-3"></div>
+                <div className="image-glow"></div>
               </motion.div>
             </Col>
           </Row>
