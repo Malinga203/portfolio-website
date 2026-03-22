@@ -24,7 +24,6 @@ const skillBadges = [
   "C#",
   "MySQL",
   "IoT",
-  "ESP32",
 ];
 
 const services = [
@@ -71,7 +70,7 @@ export default function Home() {
 
                 <div className="hero-buttons">
                   <Button className="btn-main" as={Link} to="/projects">
-                    View Portfolio
+                    View Projects
                   </Button>
 
                   <Button
@@ -88,7 +87,7 @@ export default function Home() {
                   <Button
                     className="btn-outline"
                     as="a"
-                    href="https://www.linkedin.com/"
+                    href="https://www.linkedin.com/in/malinga-lakmal"
                     target="_blank"
                     rel="noreferrer"
                   >

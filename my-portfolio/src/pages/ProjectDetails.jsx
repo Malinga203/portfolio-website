@@ -1,5 +1,6 @@
 import { Container, Row, Col, Badge, Button } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
+import { FaGithub } from "react-icons/fa";
 import { projects } from "../data/projects";
 
 export default function ProjectDetails() {
@@ -10,9 +11,9 @@ export default function ProjectDetails() {
     return (
       <section className="py-5">
         <Container>
-          <div className="details-card">
-            <h2 className="fw-bold">Project not found</h2>
-            <p>The requested project could not be found.</p>
+          <div className="details-card text-center">
+            <h2 className="fw-bold mb-3">Project not found</h2>
+            <p className="mb-4">The project you are looking for does not exist.</p>
             <Button as={Link} to="/projects" variant="light">
               Back to Projects
             </Button>
@@ -53,12 +54,13 @@ export default function ProjectDetails() {
           <Col lg={4}>
             <div className="details-card">
               <h5 className="fw-bold mb-3">Quick Actions</h5>
+
               <div className="d-grid gap-2">
                 <Button as={Link} to="/projects" variant="light">
                   Back to Projects
                 </Button>
 
-                {project.github && (
+                {project.github ? (
                   <Button
                     as="a"
                     href={project.github}
@@ -66,7 +68,12 @@ export default function ProjectDetails() {
                     rel="noreferrer"
                     variant="outline-light"
                   >
+                    <FaGithub className="me-2" />
                     View GitHub Repository
+                  </Button>
+                ) : (
+                  <Button variant="outline-secondary" disabled>
+                    Repository Link Not Available
                   </Button>
                 )}
               </div>

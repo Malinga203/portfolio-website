@@ -18,6 +18,24 @@ export const projects = [
     ],
   },
   {
+    slug: "currency-converter",
+    title: "Currency Converter",
+    category: "featured",
+    short:
+      "Responsive currency converter web application for exchange conversion with a clean and user-friendly interface.",
+    description:
+      "Currency Converter is a frontend-focused web application developed to convert values between currencies through a clean interface and smooth user experience. This project highlights practical UI design, conversion logic, and interactive web development concepts.",
+    tech: ["React", "JavaScript", "CSS", "API Integration"],
+    tags: ["React", "JavaScript", "Web"],
+    github: "https://github.com/Malinga203/currency-converter.git",
+    role: "Developer",
+    highlights: [
+      "User-friendly currency conversion interface",
+      "Responsive and modern web layout",
+      "Frontend logic with dynamic conversion flow",
+    ],
+  },
+  {
     slug: "care-buddy",
     title: "care-buddy",
     category: "featured",
@@ -123,6 +141,24 @@ export const projects = [
       "Java Swing desktop interface",
       "OOP-based system structure",
       "Academic workflow management",
+    ],
+  },
+  {
+    slug: "okinreach-villa-banquet",
+    title: "OKinreach Villa Banquet",
+    category: "contribution",
+    short:
+      "Contributed to a villa and banquet related web project with implementation and interface support.",
+    description:
+      "OKinreach Villa Banquet is a contribution-based web project where I supported development and improvement tasks related to the interface and general system workflow. My contribution focused on collaborative implementation and project enhancement.",
+    tech: ["HTML", "CSS", "JavaScript", "PHP"],
+    tags: ["Contribution", "Web", "PHP"],
+    github: "https://github.com/Malinga203/OKinreach-Villa-Banquet.git",
+    role: "Contributor",
+    highlights: [
+      "Collaborative project contribution",
+      "UI and system improvement support",
+      "Villa and banquet related workflow assistance",
     ],
   },
   {
