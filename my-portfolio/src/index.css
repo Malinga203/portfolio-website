@@ -262,3 +262,57 @@ a {
     font-size: 2.4rem;
   }
 }
+.hero-image-wrapper {
+  position: relative;
+}
+
+.hero-image-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  padding: 18px;
+  overflow: hidden;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+}
+
+.hero-profile-image {
+  width: 100%;
+  max-width: 360px;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-mini-badge {
+  position: absolute;
+  bottom: 28px;
+  left: 28px;
+  background: rgba(7, 17, 31, 0.82);
+  color: #ffffff;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 991px) {
+  .hero-profile-image {
+    max-width: 300px;
+    height: 360px;
+  }
+
+  .hero-mini-badge {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    width: max-content;
+  }
+}
