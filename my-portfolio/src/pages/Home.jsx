@@ -5,6 +5,7 @@ import { FaGithub, FaCode, FaLaptopCode, FaMicrochip } from "react-icons/fa";
 import ProjectCard from "../components/ProjectCard";
 import SectionTitle from "../components/SectionTitle";
 import { featuredProjects, contributionProjects } from "../data/projects";
+import profile from "../assets/my-photo.jpg";
 
 export default function Home() {
   return (
@@ -55,34 +56,53 @@ export default function Home() {
 
             <Col lg={5}>
               <motion.div
-                className="hero-stats-card"
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.7 }}
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="hero-image-wrapper"
               >
-                <div className="stat-item">
-                  <FaCode />
-                  <div>
-                    <h4>{featuredProjects.length + contributionProjects.length}+</h4>
-                    <p>Projects & Contributions</p>
+                <div className="hero-image-card">
+                  <img
+                    src={profile}
+                    alt="Malinga Lakmal"
+                    className="hero-profile-image"
+                  />
+
+                  <div className="hero-mini-badge">
+                    <span>Available for Projects</span>
                   </div>
                 </div>
 
-                <div className="stat-item">
-                  <FaLaptopCode />
-                  <div>
-                    <h4>Web + Desktop</h4>
-                    <p>React, PHP, Java, C# and full project development</p>
+                <motion.div
+                  className="hero-stats-card mt-4"
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                >
+                  <div className="stat-item">
+                    <FaCode />
+                    <div>
+                      <h4>{featuredProjects.length + contributionProjects.length}+</h4>
+                      <p>Projects & Contributions</p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="stat-item">
-                  <FaMicrochip />
-                  <div>
-                    <h4>IoT Focus</h4>
-                    <p>Embedded systems and smart safety project experience</p>
+                  <div className="stat-item">
+                    <FaLaptopCode />
+                    <div>
+                      <h4>Web + Desktop</h4>
+                      <p>React, PHP, Java, C# and full project development</p>
+                    </div>
                   </div>
-                </div>
+
+                  <div className="stat-item">
+                    <FaMicrochip />
+                    <div>
+                      <h4>IoT Focus</h4>
+                      <p>Embedded systems and smart safety project experience</p>
+                    </div>
+                  </div>
+                </motion.div>
               </motion.div>
             </Col>
           </Row>
