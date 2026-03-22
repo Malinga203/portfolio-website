@@ -20,6 +20,7 @@ html {
 
 body {
   margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
   background: #000000;
   color: var(--text);
@@ -52,6 +53,7 @@ img {
 
 /* navbar */
 .custom-navbar {
+  height: 70px;
   background: rgba(0, 0, 0, 0.85);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(12px);
@@ -114,7 +116,23 @@ img {
 /* hero */
 .pro-hero {
   position: relative;
-  padding: 90px 0 70px;
+  padding: 40px 0 40px;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+}
+
+.pro-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(34, 211, 238, 0.05), transparent 35%);
+  z-index: 0;
+}
+
+.pro-hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-small {
@@ -567,7 +585,8 @@ img {
 /* responsive */
 @media (max-width: 991px) {
   .pro-hero {
-    padding: 70px 0 50px;
+    padding: 30px 0 40px;
+    min-height: auto;
   }
 
   .hero-buttons {
