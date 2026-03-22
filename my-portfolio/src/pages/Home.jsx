@@ -8,6 +8,9 @@ import {
   FaMicrochip,
   FaLinkedin,
   FaDownload,
+  FaGlobe,
+  FaServer,
+  FaDatabase,
 } from "react-icons/fa";
 import ProjectCard from "../components/ProjectCard";
 import SectionTitle from "../components/SectionTitle";
@@ -24,15 +27,34 @@ const skillBadges = [
   "C#",
   "MySQL",
   "IoT",
+  "ESP32",
+];
+
+const services = [
+  {
+    icon: <FaGlobe />,
+    title: "Web Development",
+    text: "Building responsive and modern web applications with clean UI, strong usability, and practical workflows.",
+  },
+  {
+    icon: <FaServer />,
+    title: "System Development",
+    text: "Developing structured desktop and backend-focused systems for academic and real-world use cases.",
+  },
+  {
+    icon: <FaDatabase />,
+    title: "Database & IoT Solutions",
+    text: "Working with database-driven systems and smart IoT projects that solve practical problems.",
+  },
 ];
 
 export default function Home() {
   const { scrollY } = useScroll();
 
-  const imageY = useTransform(scrollY, [0, 600], [0, 80]);
-  const imageRotate = useTransform(scrollY, [0, 600], [0, -4]);
-  const imageScale = useTransform(scrollY, [0, 600], [1, 1.04]);
-  const bgOpacity = useTransform(scrollY, [0, 500], [0.25, 0.55]);
+  const imageY = useTransform(scrollY, [0, 500], [0, 55]);
+  const imageRotate = useTransform(scrollY, [0, 500], [0, -3]);
+  const imageScale = useTransform(scrollY, [0, 500], [1, 1.03]);
+  const bgOpacity = useTransform(scrollY, [0, 400], [0.2, 0.45]);
 
   return (
     <div>
@@ -47,14 +69,14 @@ export default function Home() {
         />
 
         <Container>
-          <Row className="align-items-start g-5">
+          <Row className="align-items-center g-5">
             <Col lg={5}>
               <motion.div
                 className="hero-image-wrapper"
                 style={{ y: imageY }}
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.7 }}
               >
                 <motion.div
                   className="hero-image-card"
@@ -87,7 +109,10 @@ export default function Home() {
                 </Badge>
 
                 <h1 className="hero-title">
-                  Building Web, Desktop & IoT Solutions with a Professional Mindset
+                  Building{" "}
+                  <span className="typewriter-text">
+                    Web, Desktop & IoT Solutions
+                  </span>
                 </h1>
 
                 <p className="hero-text">
@@ -97,7 +122,7 @@ export default function Home() {
                   practical, and user-friendly solutions.
                 </p>
 
-                <div className="d-flex flex-wrap gap-3 mt-4">
+                <div className="hero-actions d-flex flex-wrap gap-3 mt-4">
                   <Button as={Link} to="/projects" variant="light" size="lg">
                     View Projects
                   </Button>
@@ -116,7 +141,7 @@ export default function Home() {
 
                   <Button
                     as="a"
-                    href="https://www.linkedin.com/in/malinga-lakmal/"
+                    href="https://www.linkedin.com/in/malinga-lakmal"
                     target="_blank"
                     rel="noreferrer"
                     variant="outline-info"
@@ -145,7 +170,7 @@ export default function Home() {
                       className="skill-badge"
                       initial={{ opacity: 0, y: 16 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.45, delay: index * 0.06 }}
+                      transition={{ duration: 0.4, delay: index * 0.05 }}
                     >
                       {skill}
                     </motion.span>
@@ -157,7 +182,7 @@ export default function Home() {
                 className="hero-stats-card mt-4"
                 initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.7, delay: 0.2 }}
+                transition={{ duration: 0.7, delay: 0.15 }}
               >
                 <div className="stat-item">
                   <FaCode />
@@ -191,6 +216,32 @@ export default function Home() {
       <section className="py-5">
         <Container>
           <SectionTitle
+            title="What I Do"
+            subtitle="My main areas of development and technical focus."
+          />
+          <Row className="g-4">
+            {services.map((service, index) => (
+              <Col md={6} lg={4} key={service.title}>
+                <motion.div
+                  className="service-card"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.45, delay: index * 0.08 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                >
+                  <div className="service-icon">{service.icon}</div>
+                  <h4>{service.title}</h4>
+                  <p>{service.text}</p>
+                </motion.div>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </section>
+
+      <section className="py-5">
+        <Container>
+          <SectionTitle
             title="Featured Projects"
             subtitle="A selection of my major academic and personal projects."
           />
@@ -211,11 +262,21 @@ export default function Home() {
             subtitle="Projects where I contributed to implementation, UI, or system improvement tasks."
           />
           <Row className="g-4">
-            {contributionProjects.map((project) => (
-              <Col md={6} lg={4} key={project.slug}>
-                <ProjectCard project={project} />
+            {contributionProjects.length > 0 ? (
+              contributionProjects.map((project) => (
+                <Col md={6} lg={4} key={project.slug}>
+                  <ProjectCard project={project} />
+                </Col>
+              ))
+            ) : (
+              <Col>
+                <div className="content-card">
+                  <p className="mb-0">
+                    Contribution projects will be added here soon.
+                  </p>
+                </div>
               </Col>
-            ))}
+            )}
           </Row>
         </Container>
       </section>
