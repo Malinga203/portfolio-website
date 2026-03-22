@@ -12,7 +12,7 @@ import {
 import ProjectCard from "../components/ProjectCard";
 import SectionTitle from "../components/SectionTitle";
 import { featuredProjects, contributionProjects } from "../data/projects";
-import profile from "../assets/my-photo.jpg";
+import profile from "../assets/malinga-lakmal.png";
 
 const skillBadges = [
   "React",
