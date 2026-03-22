@@ -1,16 +1,13 @@
-import { Container, Row, Col, Button, Badge } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   FaGithub,
-  FaCode,
-  FaLaptopCode,
-  FaMicrochip,
-  FaLinkedin,
-  FaDownload,
   FaGlobe,
   FaServer,
   FaDatabase,
+  FaLinkedin,
+  FaDownload,
 } from "react-icons/fa";
 import ProjectCard from "../components/ProjectCard";
 import SectionTitle from "../components/SectionTitle";
@@ -49,114 +46,61 @@ const services = [
 ];
 
 export default function Home() {
-  const { scrollY } = useScroll();
-
-  const imageY = useTransform(scrollY, [0, 500], [0, 55]);
-  const imageRotate = useTransform(scrollY, [0, 500], [0, -3]);
-  const imageScale = useTransform(scrollY, [0, 500], [1, 1.03]);
-  const bgOpacity = useTransform(scrollY, [0, 400], [0.2, 0.45]);
-
   return (
     <div>
-      <section className="hero-section">
-        <motion.div
-          className="hero-bg-orb hero-bg-orb-1"
-          style={{ opacity: bgOpacity }}
-        />
-        <motion.div
-          className="hero-bg-orb hero-bg-orb-2"
-          style={{ opacity: bgOpacity }}
-        />
-
+      <section className="hero-section modern-hero-section">
         <Container>
           <Row className="align-items-center g-5">
-            <Col lg={5}>
+            <Col lg={6}>
               <motion.div
-                className="hero-image-wrapper"
-                style={{ y: imageY }}
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: -40 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.7 }}
+                transition={{ duration: 0.8 }}
               >
-                <motion.div
-                  className="hero-image-card"
-                  style={{
-                    rotate: imageRotate,
-                    scale: imageScale,
-                  }}
-                >
-                  <img
-                    src={profile}
-                    alt="Malinga Lakmal"
-                    className="hero-profile-image"
-                  />
+                <p className="hero-small">Hello, I am</p>
 
-                  <div className="hero-mini-badge">
-                    Available for Projects
-                  </div>
-                </motion.div>
-              </motion.div>
-            </Col>
+                <h1 className="hero-name">Malinga Lakmal</h1>
 
-            <Col lg={7}>
-              <motion.div
-                initial={{ opacity: 0, y: 28 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7 }}
-              >
-                <Badge className="hero-badge mb-3">
-                  Undergraduate Computing Student
-                </Badge>
+                <h2 className="hero-role">Web Developer & IoT Enthusiast</h2>
 
-                <h1 className="hero-title">
-                  Building{" "}
-                  <span className="typewriter-text">
-                    Web, Desktop & IoT Solutions
-                  </span>
-                </h1>
-
-                <p className="hero-text">
-                  I’m Malinga Lakmal, a BSc (Hons) Computing student passionate
-                  about creating modern web applications, desktop systems, and
-                  IoT-based projects that solve real-world problems with clean,
-                  practical, and user-friendly solutions.
+                <p className="hero-description">
+                  A passionate Computing student building modern web, desktop,
+                  and IoT solutions with clean design, strong usability, and
+                  real-world impact.
                 </p>
 
-                <div className="hero-actions d-flex flex-wrap gap-3 mt-4">
-                  <Button as={Link} to="/projects" variant="light" size="lg">
-                    View Projects
+                <div className="hero-buttons">
+                  <Button className="btn-main" as={Link} to="/projects">
+                    View Portfolio
                   </Button>
 
                   <Button
+                    className="btn-outline"
                     as="a"
                     href="https://github.com/Malinga203"
                     target="_blank"
                     rel="noreferrer"
-                    variant="outline-light"
-                    size="lg"
                   >
                     <FaGithub className="me-2" />
                     GitHub
                   </Button>
 
                   <Button
+                    className="btn-outline"
                     as="a"
-                    href="https://www.linkedin.com/in/malinga-lakmal"
+                    href="https://www.linkedin.com/"
                     target="_blank"
                     rel="noreferrer"
-                    variant="outline-info"
-                    size="lg"
                   >
                     <FaLinkedin className="me-2" />
                     LinkedIn
                   </Button>
 
                   <Button
+                    className="btn-main"
                     as="a"
                     href="/cv/Malinga-Lakmal-CV.pdf"
                     download
-                    variant="info"
-                    size="lg"
                   >
                     <FaDownload className="me-2" />
                     Download CV
@@ -177,36 +121,20 @@ export default function Home() {
                   ))}
                 </div>
               </motion.div>
+            </Col>
 
+            <Col lg={6}>
               <motion.div
-                className="hero-stats-card mt-4"
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.7, delay: 0.15 }}
+                className="hero-image-modern"
+                initial={{ opacity: 0, x: 40 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
               >
-                <div className="stat-item">
-                  <FaCode />
-                  <div>
-                    <h4>{featuredProjects.length + contributionProjects.length}+</h4>
-                    <p>Projects & Contributions</p>
-                  </div>
-                </div>
+                <img src={profile} alt="Malinga Lakmal" />
 
-                <div className="stat-item">
-                  <FaLaptopCode />
-                  <div>
-                    <h4>Web + Desktop</h4>
-                    <p>React, PHP, Java, C# and full project development</p>
-                  </div>
-                </div>
-
-                <div className="stat-item">
-                  <FaMicrochip />
-                  <div>
-                    <h4>IoT Focus</h4>
-                    <p>Embedded systems and smart safety project experience</p>
-                  </div>
-                </div>
+                <div className="circle circle-1"></div>
+                <div className="circle circle-2"></div>
+                <div className="circle circle-3"></div>
               </motion.div>
             </Col>
           </Row>
