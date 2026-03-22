@@ -1,19 +1,51 @@
 import { Container, Row, Col, Badge } from "react-bootstrap";
 import { motion } from "framer-motion";
+import {
+  FaGraduationCap,
+  FaCode,
+  FaLaptopCode,
+  FaMicrochip,
+  FaDatabase,
+  FaUsers,
+} from "react-icons/fa";
 import SectionTitle from "../components/SectionTitle";
 
-export default function About() {
-  const skills = {
-    Frontend: ["React", "JavaScript", "HTML", "CSS", "Bootstrap"],
-    Backend: ["PHP", "Laravel", "Spring Boot"],
-    Database: ["MySQL"],
-    Desktop: ["Java", "Java Swing", "C#", "Windows Forms"],
-    IoT: ["ESP8266", "ESP32", "RFID", "Sensors", "Embedded Logic"],
-    Tools: ["Git", "GitHub", "Vite", "VS Code"],
-  };
+const skillGroups = [
+  {
+    title: "Frontend Development",
+    icon: <FaCode />,
+    items: ["React", "JavaScript", "HTML", "CSS", "Bootstrap"],
+  },
+  {
+    title: "Backend & Web Systems",
+    icon: <FaLaptopCode />,
+    items: ["PHP", "Laravel", "Spring Boot"],
+  },
+  {
+    title: "Database Technologies",
+    icon: <FaDatabase />,
+    items: ["MySQL"],
+  },
+  {
+    title: "Desktop Development",
+    icon: <FaGraduationCap />,
+    items: ["Java", "Java Swing", "C#", "Windows Forms"],
+  },
+  {
+    title: "IoT & Embedded",
+    icon: <FaMicrochip />,
+    items: ["ESP8266", "ESP32", "RFID", "Sensors", "Embedded Logic"],
+  },
+  {
+    title: "Tools & Collaboration",
+    icon: <FaUsers />,
+    items: ["Git", "GitHub", "Vite", "VS Code", "Team Collaboration"],
+  },
+];
 
+export default function About() {
   return (
-    <section className="py-5">
+    <section className="about-page py-5">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 22 }}
@@ -22,66 +54,112 @@ export default function About() {
         >
           <SectionTitle
             title="About Me"
-            subtitle="My academic background, technical interests, and development focus."
+            subtitle="A professional overview of my academic background, interests, and technical capabilities."
           />
 
-          <Row className="g-4">
+          <Row className="g-4 mb-5">
             <Col lg={7}>
-              <div className="content-card">
+              <div className="about-main-card h-100">
                 <p>
-                  I am a first-year BSc (Hons) Computing student at the National
-                  Institute of Business Management (NIBM). I am passionate about
-                  software development and enjoy building practical systems that
-                  combine good design, structured logic, and real-world value.
+                  I am a BSc (Hons) Computing student at the National Institute
+                  of Business Management (NIBM), with a strong interest in
+                  software development, modern web technologies, desktop
+                  applications, and IoT-based solutions.
                 </p>
 
                 <p>
-                  My experience includes React frontend development, PHP and
-                  Laravel web systems, Java and C# desktop applications, and
-                  IoT-based project development using embedded devices and sensor
-                  concepts.
+                  My work focuses on building practical systems with clean user
+                  interfaces, structured logic, and real-world usefulness. I
+                  enjoy working on projects that improve usability, solve
+                  technical problems, and demonstrate both creativity and
+                  problem-solving ability.
+                </p>
+
+                <p>
+                  I have developed and contributed to projects in multiple
+                  domains including React-based web applications, PHP and
+                  Laravel systems, Java and C# desktop applications, and smart
+                  IoT concepts involving RFID and embedded devices.
                 </p>
 
                 <p className="mb-0">
-                  I have also contributed to HTML and PHP-based systems such as
-                  a Hotel Management System, where I supported system structure,
-                  interface-related work, and implementation improvements.
+                  I am continuously improving my skills to become a
+                  well-rounded software developer and prepare for internship
+                  opportunities and the professional software industry.
                 </p>
               </div>
             </Col>
 
             <Col lg={5}>
-              <div className="content-card">
-                <h5 className="fw-bold mb-3">Education</h5>
-                <p className="mb-1">National Institute of Business Management</p>
-                <p className="project-meta mb-0">BSc (Hons) Computing • 1st Year</p>
+              <div className="about-side-card mb-4">
+                <h4 className="about-card-title">Education</h4>
+                <div className="about-info-item">
+                  <FaGraduationCap />
+                  <div>
+                    <span className="about-label">Institute</span>
+                    <p className="mb-0">
+                      National Institute of Business Management
+                    </p>
+                  </div>
+                </div>
+
+                <div className="about-info-item">
+                  <FaGraduationCap />
+                  <div>
+                    <span className="about-label">Program</span>
+                    <p className="mb-0">BSc (Hons) Computing</p>
+                  </div>
+                </div>
+
+                <div className="about-info-item">
+                  <FaGraduationCap />
+                  <div>
+                    <span className="about-label">Current Level</span>
+                    <p className="mb-0">Undergraduate Student</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="about-side-card">
+                <h4 className="about-card-title">Career Focus</h4>
+                <p className="mb-0">
+                  Interested in frontend development, full-stack web systems,
+                  software engineering, desktop applications, and IoT-based
+                  smart solutions.
+                </p>
               </div>
             </Col>
           </Row>
 
-          <div className="mt-5">
-            <SectionTitle
-              title="Skills"
-              subtitle="Technologies and tools I use across my projects."
-            />
+          <SectionTitle
+            title="Technical Skills"
+            subtitle="The main technologies and tools I currently work with."
+          />
 
-            <Row className="g-4">
-              {Object.entries(skills).map(([group, values]) => (
-                <Col md={6} lg={4} key={group}>
-                  <div className="content-card h-100">
-                    <h5 className="fw-bold mb-3">{group}</h5>
-                    <div className="d-flex flex-wrap gap-2">
-                      {values.map((item) => (
-                        <Badge key={item} className="tag-badge">
-                          {item}
-                        </Badge>
-                      ))}
-                    </div>
+          <Row className="g-4">
+            {skillGroups.map((group, index) => (
+              <Col md={6} lg={4} key={group.title}>
+                <motion.div
+                  className="about-skill-card h-100"
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.45, delay: index * 0.05 }}
+                  viewport={{ once: true, amount: 0.15 }}
+                >
+                  <div className="about-skill-icon">{group.icon}</div>
+                  <h5 className="fw-bold mb-3">{group.title}</h5>
+
+                  <div className="d-flex flex-wrap gap-2">
+                    {group.items.map((item) => (
+                      <Badge key={item} className="tag-badge">
+                        {item}
+                      </Badge>
+                    ))}
                   </div>
-                </Col>
-              ))}
-            </Row>
-          </div>
+                </motion.div>
+              </Col>
+            ))}
+          </Row>
         </motion.div>
       </Container>
     </section>
