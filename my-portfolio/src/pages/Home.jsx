@@ -1,11 +1,30 @@
 import { Container, Row, Col, Button, Badge } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { FaGithub, FaCode, FaLaptopCode, FaMicrochip } from "react-icons/fa";
+import {
+  FaGithub,
+  FaCode,
+  FaLaptopCode,
+  FaMicrochip,
+  FaLinkedin,
+  FaDownload,
+} from "react-icons/fa";
 import ProjectCard from "../components/ProjectCard";
 import SectionTitle from "../components/SectionTitle";
 import { featuredProjects, contributionProjects } from "../data/projects";
 import profile from "../assets/my-photo.jpg";
+
+const skillBadges = [
+  "React",
+  "Bootstrap",
+  "JavaScript",
+  "PHP",
+  "Laravel",
+  "Java",
+  "C#",
+  "MySQL",
+  "IoT",
+];
 
 export default function Home() {
   const { scrollY } = useScroll();
@@ -94,6 +113,43 @@ export default function Home() {
                     <FaGithub className="me-2" />
                     GitHub
                   </Button>
+
+                  <Button
+                    as="a"
+                    href="https://www.linkedin.com/in/malinga-lakmal/"
+                    target="_blank"
+                    rel="noreferrer"
+                    variant="outline-info"
+                    size="lg"
+                  >
+                    <FaLinkedin className="me-2" />
+                    LinkedIn
+                  </Button>
+
+                  <Button
+                    as="a"
+                    href="/cv/Malinga-Lakmal-CV.pdf"
+                    download
+                    variant="info"
+                    size="lg"
+                  >
+                    <FaDownload className="me-2" />
+                    Download CV
+                  </Button>
+                </div>
+
+                <div className="skill-badges-wrap mt-4">
+                  {skillBadges.map((skill, index) => (
+                    <motion.span
+                      key={skill}
+                      className="skill-badge"
+                      initial={{ opacity: 0, y: 16 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.45, delay: index * 0.06 }}
+                    >
+                      {skill}
+                    </motion.span>
+                  ))}
                 </div>
               </motion.div>
 

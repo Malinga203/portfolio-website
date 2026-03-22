@@ -273,3 +273,27 @@ a {
     opacity: 0.2 !important;
   }
 }
+.skill-badges-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #e8f1f8;
+  font-size: 0.92rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.skill-badge:hover {
+  transform: translateY(-4px);
+  background: rgba(56, 189, 248, 0.12);
+}
