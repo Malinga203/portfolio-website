@@ -117,7 +117,7 @@ export default function Contact() {
                   </a>
 
                   <a
-                    href="https://www.linkedin.com/"
+                    href="https://www.linkedin.com/in/malinga-lakmal"
                     target="_blank"
                     rel="noreferrer"
                     className="contact-info-item"

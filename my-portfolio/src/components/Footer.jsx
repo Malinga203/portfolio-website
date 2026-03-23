@@ -6,7 +6,7 @@ export default function Footer() {
       <Container className="text-center">
         <p className="mb-1">© {new Date().getFullYear()} Malinga Lakmal</p>
         <p className="footer-sub mb-0">
-          Developer Portfolio • React • Bootstrap • Framer Motion
+          Developer Portfolio • React • Bootstrap
         </p>
       </Container>
     </footer>
