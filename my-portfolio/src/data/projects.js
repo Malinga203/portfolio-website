@@ -1,5 +1,27 @@
 export const projects = [
   {
+    slug: "pocket-sentinel",
+    title: "PocketSentinel – Advanced Anti-Theft Mobile Security App",
+    category: "featured",
+    short:
+      "Smart mobile security app with motion detection, intruder capture, and real-time Firebase GPS tracking.",
+    description:
+      "PocketSentinel is an advanced Android-based anti-theft application designed to protect mobile devices from unauthorized access and physical theft. It integrates sensor-based detection, Firebase cloud tracking, and stealth intruder capture to provide real-time security and recovery capabilities even without SIM access.",
+    tech: ["Java", "Android studio", "Firebase", "Android Sensors", "FusedLocationProviderClient","XML (Material UI)"],
+    tags: ["Mobile", "Security", "Android", "IoT"],
+    github: "https://github.com/Malinga203/PocketSentinel-AntiTheft.git",
+    role: "Developer",
+    highlights: [
+      "Motion detection using accelerometer sensor",
+      "Stealth intruder photo capture after failed PIN attempts",
+      "Real-time GPS tracking with Firebase cloud sync",
+      "Charger removal alert system",
+      "Remote SMS command support (LOCATE)",
+      "Background anti-theft monitoring service"
+    ],  
+
+  },
+  {
     slug: "construction-site-safety-iot-project",
     title: "Construction Site Safety IoT Project",
     category: "featured",
