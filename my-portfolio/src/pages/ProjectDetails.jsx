@@ -1,7 +1,12 @@
 import { Container, Row, Col, Badge, Button } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FaGithub, FaArrowLeft, FaUserTie, FaCodeBranch } from "react-icons/fa";
+import {
+  FaGithub,
+  FaArrowLeft,
+  FaUserTie,
+  FaCodeBranch,
+} from "react-icons/fa";
 import { projects } from "../data/projects";
 
 export default function ProjectDetails() {
@@ -14,7 +19,9 @@ export default function ProjectDetails() {
         <Container>
           <div className="details-card text-center">
             <h2 className="fw-bold mb-3">Project not found</h2>
-            <p className="mb-4">The project you are looking for does not exist.</p>
+            <p className="mb-4">
+              The project you are looking for does not exist.
+            </p>
             <Button as={Link} to="/projects" variant="light">
               <FaArrowLeft className="me-2" />
               Back to Projects
@@ -36,8 +43,14 @@ export default function ProjectDetails() {
           <Row className="g-4">
             <Col lg={8}>
               <div className="details-card h-100">
-                <p className="project-meta mb-2">{project.category === "contribution" ? "Contribution Project" : "Featured Project"}</p>
+                <p className="project-meta mb-2">
+                  {project.category === "contribution"
+                    ? "Contribution Project"
+                    : "Featured Project"}
+                </p>
+
                 <h1 className="fw-bold mb-3">{project.title}</h1>
+
                 <p className="project-lead-text">{project.description}</p>
 
                 <div className="details-info-row mt-4">
@@ -53,12 +66,16 @@ export default function ProjectDetails() {
                     <FaCodeBranch />
                     <div>
                       <span className="details-label">Category</span>
-                      <p className="mb-0 text-capitalize">{project.category}</p>
+                      <p className="mb-0 text-capitalize">
+                        {project.category}
+                      </p>
                     </div>
                   </div>
                 </div>
 
-                <h5 className="fw-bold mt-4 mb-3">Technologies Used</h5>
+                <h5 className="fw-bold mt-4 mb-3">
+                  Technologies Used
+                </h5>
                 <div className="d-flex flex-wrap gap-2">
                   {project.tech.map((item) => (
                     <Badge key={item} className="tag-badge">
@@ -67,7 +84,18 @@ export default function ProjectDetails() {
                   ))}
                 </div>
 
-                <h5 className="fw-bold mt-4 mb-3">Project Highlights</h5>
+                <h5 className="fw-bold mt-4 mb-3">Tags</h5>
+                <div className="d-flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <Badge key={tag} bg="secondary">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+
+                <h5 className="fw-bold mt-4 mb-3">
+                  Project Highlights
+                </h5>
                 <ul className="list-clean">
                   {project.highlights.map((item) => (
                     <li key={item}>{item}</li>
@@ -104,11 +132,13 @@ export default function ProjectDetails() {
                   )}
                 </div>
 
+                
                 <div className="details-note-box mt-4">
                   <h6 className="fw-bold mb-2">Project Note</h6>
                   <p className="mb-0">
-                    This page highlights the project overview, technologies used,
-                    and key contributions or features presented in the portfolio.
+                    This project demonstrates real-world problem solving using
+                    modern technologies, focusing on performance, usability, and
+                    practical implementation.
                   </p>
                 </div>
               </div>
