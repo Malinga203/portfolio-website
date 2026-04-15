@@ -16,8 +16,9 @@ export default function Projects() {
       const matchesSearch =
         project.title.toLowerCase().includes(term) ||
         project.short.toLowerCase().includes(term) ||
+        project.description.toLowerCase().includes(term) ||
         project.tech.join(" ").toLowerCase().includes(term);
-
+        
       const matchesTag =
         activeTag === "All" || project.tags.includes(activeTag);
 
