@@ -17,10 +17,14 @@ export default function Projects() {
         project.title.toLowerCase().includes(term) ||
         project.short.toLowerCase().includes(term) ||
         project.description.toLowerCase().includes(term) ||
-        project.tech.join(" ").toLowerCase().includes(term);
-        
+        project.tech.join(" ").toLowerCase().includes(term) ||
+        project.tags.join(" ").toLowerCase().includes(term);
+
       const matchesTag =
-        activeTag === "All" || project.tags.includes(activeTag);
+        activeTag === "All" ||
+        project.tags.some(
+          (tag) => tag.toLowerCase() === activeTag.toLowerCase()
+        );
 
       return matchesSearch && matchesTag;
     });
@@ -76,7 +80,8 @@ export default function Projects() {
 
             <div className="projects-result-line mt-3">
               <Badge className="projects-count-badge">
-                {filteredProjects.length} Project{filteredProjects.length !== 1 ? "s" : ""}
+                {filteredProjects.length} Project
+                {filteredProjects.length !== 1 ? "s" : ""}
               </Badge>
             </div>
           </div>
@@ -88,7 +93,10 @@ export default function Projects() {
                   <motion.div
                     initial={{ opacity: 0, y: 18 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: index * 0.05 }}
+                    transition={{
+                      duration: 0.4,
+                      delay: index * 0.05,
+                    }}
                     viewport={{ once: true, amount: 0.15 }}
                     className="h-100"
                   >
@@ -98,10 +106,10 @@ export default function Projects() {
               ))
             ) : (
               <Col>
-                <div className="content-card text-center">
-                  <h4 className="mb-3">No matching projects found</h4>
+                <div className="content-card text-center p-4">
+                  <h4 className="mb-3">No matching projects found </h4>
                   <p className="mb-0">
-                    Try changing the search term or selecting a different tag.
+                    Try a different keyword or select another tag.
                   </p>
                 </div>
               </Col>
