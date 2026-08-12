@@ -9,9 +9,14 @@ import {
   FaLinkedin,
   FaDownload,
 } from "react-icons/fa";
+
 import ProjectCard from "../components/ProjectCard";
 import SectionTitle from "../components/SectionTitle";
-import { featuredProjects, contributionProjects } from "../data/projects";
+import {
+  featuredProjects,
+  contributionProjects,
+} from "../data/projects";
+
 import profile from "../assets/malinga-lakmal.png";
 
 const skillBadges = [
@@ -47,9 +52,11 @@ const services = [
 export default function Home() {
   return (
     <div>
+      {/* HERO SECTION */}
       <section className="hero-section pro-hero">
         <Container>
           <Row className="align-items-center g-5">
+            {/* HERO CONTENT */}
             <Col lg={6}>
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
@@ -68,10 +75,11 @@ export default function Home() {
 
                 <p className="hero-description">
                   A passionate Computing student focused on creating professional
-                  web, desktop, and IoT solutions with modern UI design and
-                  real-world impact.
+                  web, desktop, mobile, and IoT solutions with modern UI design
+                  and real-world impact.
                 </p>
 
+                {/* HERO BUTTONS */}
                 <div className="hero-buttons">
                   <Button className="btn-main" as={Link} to="/projects">
                     View Projects
@@ -99,17 +107,20 @@ export default function Home() {
                     LinkedIn
                   </Button>
 
+                  {/* CV BUTTON */}
                   <Button
                     className="btn-main"
                     as="a"
                     href="/cv/Malinga-Lakmal-CV.pdf"
-                    download
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     <FaDownload className="me-2" />
-                    CV
+                    Download CV
                   </Button>
                 </div>
 
+                {/* SKILLS */}
                 <div className="skill-badges-wrap mt-4">
                   {skillBadges.map((skill, index) => (
                     <motion.span
@@ -126,6 +137,7 @@ export default function Home() {
               </motion.div>
             </Col>
 
+            {/* PROFILE IMAGE */}
             <Col lg={6}>
               <motion.div
                 className="hero-image-pro"
@@ -141,12 +153,14 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* WHAT I DO */}
       <section className="py-5">
         <Container>
           <SectionTitle
             title="What I Do"
             subtitle="My main areas of development and technical focus."
           />
+
           <Row className="g-4">
             {services.map((service, index) => (
               <Col md={6} lg={4} key={service.title}>
@@ -154,7 +168,10 @@ export default function Home() {
                   className="service-card"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.45, delay: index * 0.08 }}
+                  transition={{
+                    duration: 0.45,
+                    delay: index * 0.08,
+                  }}
                   viewport={{ once: true, amount: 0.2 }}
                 >
                   <div className="service-icon">{service.icon}</div>
@@ -167,12 +184,14 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* FEATURED PROJECTS */}
       <section className="py-5">
         <Container>
           <SectionTitle
             title="Featured Projects"
             subtitle="A selection of my major academic and personal projects."
           />
+
           <Row className="g-4">
             {featuredProjects.slice(0, 6).map((project) => (
               <Col md={6} lg={4} key={project.slug}>
@@ -183,12 +202,14 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* CONTRIBUTIONS */}
       <section className="py-5">
         <Container>
           <SectionTitle
             title="Contributions"
             subtitle="Projects where I contributed to implementation, UI, or system improvement tasks."
           />
+
           <Row className="g-4">
             {contributionProjects.length > 0 ? (
               contributionProjects.map((project) => (
